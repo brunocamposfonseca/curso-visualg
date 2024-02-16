@@ -1,9 +1,11 @@
 algoritmo "semnome"
+//  
+//  
 var
 // Criando as variáveis
 num1, num2, raiz, ex: Real
 op, random: Inteiro
-status: Literal
+status: Caractere
 
 // Funções
 funcao somar(num1, num2:Real): Real
@@ -37,6 +39,8 @@ fimfuncao
 inicio
 repita
    // Setor de escolha
+   escreval("<-------- CALCULADORA -------->")
+   escreval("")
    escreval("Escolha uma operação:")
    escreval("1 - Adição")
    escreval("2 - Subtração")
@@ -45,6 +49,10 @@ repita
    escreval("5 - Raiz quadrada")
    escreval("6 - Exponencial")
    escreval("7 - Randomico")
+   escreval("")
+   escreval("<----------------------------->")
+   escreval("")
+   
    leia(op)
    
    se (op >= 1) e (op <= 4) entao
@@ -85,5 +93,6 @@ repita
 // Pergunta de saida
 escreval("Você quer continuar? (S/N)")
 leia(status)
+limpatela
 ate (status = "n") ou (status = "N")
 fimalgoritmo
