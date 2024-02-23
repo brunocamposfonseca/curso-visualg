@@ -1,23 +1,28 @@
 algoritmo "semnome"
 var
-n1, n2, n3, n4, res: Real
-status: Literal
+// anoN - Ano de nascimento; anoA - Ano atual; idade - Valor da idade
+anoN, anoA, idade: Inteiro
+// res - Resposta
+res: Literal
 inicio
-escreval("Digite a primeira nota: ")
-leia(n1)
-escreval("Digite a segunda nota: ")
-leia(n2)
-escreval("Digite a terceira nota: ")
-leia(n3)
-escreval("Digite a quarta nota: ")
-leia(n4)
-
-res <- (n1 + n2 + n3 + n4) / 4
-se res >= 6.0 entao
-   status <- "Aprovado!
-   escreval(status)
+//Entrada
+escreval("Digite o ano de nascimento: ")
+leia(anoN)
+escreval("Digite o ano atual: ")
+leia(anoA)
+//Processamento
+idade <- anoA - anoN
+//Condi??o
+se (idade >= 18) e (idade <= 59) entao
+   res <- "Voto obrigatório!"
+   escreval(res)
 senao
-   status <- "Reprovado!"
-   escreval(status)
+   se (idade >= 16) ou (idade >= 6) entao //Idade tem que estar numa faixa de 16 a 17 e 60+
+      res <- "Voto opcional!"
+      escreval(res)
+   senao
+        res <- "Você não pode votar... ainda!"
+        escreval(res)
+   fimse
 fimse
 fimalgoritmo
