@@ -58,10 +58,10 @@ repita
                     escreval("Número 1:", num1)
                     escreval("Número 2:", num2)
 
-                    ope <- (Randi(2))
+                    ope <- Randi(3)
                     escolha ope
                        caso 1
-                          resa <- (num1 + num2)
+                          resa <- num1 + num2
                           escreval("A operação é adição")
                           escreval("A soma de", num1, " +", num2, " é igual à?")
                           leia(resb)
@@ -71,7 +71,7 @@ repita
                              escreval("Resposta Errada! A resposta certa é ", resa)
                           fimse
                        caso 2
-                          resa <- (num1 - num2)
+                          resa <- num1 - num2
                           escreval("A operação é subtração")
                           escreval("A subtração de", num1, " -", num2, " é igual à?")
                           leia(resb)
@@ -80,8 +80,8 @@ repita
                           senao
                              escreval("Resposta Errada! A resposta certa é ", resa)
                           fimse
-                          outrocaso
-                             escreval("ERROR")
+                       outrocaso
+                          escreval("ERROR")
                     fimescolha
               outrocaso
                    escreval("Esta opção não existe")

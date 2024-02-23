@@ -3,7 +3,7 @@ algoritmo "semnome"
 //  
 var
 // Criando as variáveis
-num1, num2, raiz, ex: Real
+num1, num2, raiz, ex, resa, resb: Real
 op, random: Inteiro
 status: Caractere
 
@@ -49,6 +49,7 @@ repita
    escreval("5 - Raiz quadrada")
    escreval("6 - Exponencial")
    escreval("7 - Randomico")
+   escreval("8 - Adivinha")
    escreval("")
    escreval("<----------------------------->")
    escreval("")
@@ -63,36 +64,63 @@ repita
    fimse
 
    // Chamada das funções
-   se op = 1 entao
-      escreval("A adição deu:", somar(num1, num2))
-   fimse
-   se op = 2 entao
-      escreval("A subtração deu:", sub(num1, num2))
-   fimse
-   se op = 3 entao
-      escreval("A divisão deu:", dividir(num1, num2))
-   fimse
-   se op = 4 entao
-      escreval("A multiplicação deu:", mult(num1, num2))
-   fimse
-   se op = 5 entao
-      escreval("Digite a raiz: ")
-      leia(raiz)
-      escreval("A raiz quadrada deu:", raizQuad(raiz))
-   fimse
-   se op = 6 entao
-      escreval("Escolha uma base: ")
-      leia(ex)
-      escreval("A função exponencial deu:", expo(ex))
-   fimse
-   se op = 7 entao
-      escreval("Escolha um limite para o gerador: ")
-      leia(random)
-      escreval("O computador sorteou o número:", ran(random))
-   fimse
+   escolha op
+           caso 1
+                escreval("A adição deu:", somar(num1, num2))
+           caso 2
+                escreval("A subtração deu:", sub(num1, num2))
+           caso 3
+                escreval("A divisão deu:", dividir(num1, num2))
+           caso 4
+                escreval("A multiplicação deu:", mult(num1, num2))
+           caso 5
+                escreval("Digite a raiz: ")
+                leia(raiz)
+                escreval("A raiz quadrada deu:", raizQuad(raiz))
+           caso 6
+                escreval("Escolha uma base: ")
+                leia(ex)
+                escreval("A função exponencial deu:", expo(ex))
+           caso 7
+                escreval("Escolha um limite para o gerador: ")
+                leia(random)
+                escreval("O computador sorteou o número:", ran(random))
+           caso 8
+                num1 <- (Randi(100))
+                num2 <- (Randi(100))
+                escreval("Número 1:", num1)
+                escreval("Número 2:", num2)
+                op <- Randi(3)
+                escolha op
+                     caso 1
+                     resa <- num1 + num2
+                     escreval("A operação é adição")
+                     escreval("A soma de", num1, " +", num2, " é igual à?")
+                     leia(resb)
+                     se resb = resa entao
+                        escreval("Resposta certa")
+                     senao
+                        escreval("Resposta Errada! A resposta certa é ", resa)
+                     fimse
+                     caso 2
+                     resa <- num1 - num2
+                     escreval("A operação é subtração")
+                     escreval("A subtração de", num1, " -", num2, " é igual à?")
+                     leia(resb)
+                     se resb  = resa entao
+                        escreval("Resposta certa")
+                     senao
+                        escreval("Resposta Errada! A resposta certa é ", resa)
+                     fimse
+                outrocaso
+                     escreval("ERROR")
+                fimescolha
+outrocaso
+     escreval("Está operação não existe!")
+fimescolha
 // Pergunta de saida
 escreval("Você quer continuar? (S/N)")
 leia(status)
 limpatela
-ate (status = "n") ou (status = "N")
+ate(status = "n") ou (status = "N")
 fimalgoritmo
