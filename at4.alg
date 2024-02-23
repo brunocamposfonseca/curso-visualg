@@ -1,6 +1,7 @@
 algoritmo "semnome"
 var
 n1, n2, n3, res: Real
+status: Caractere
 inicio
 escreval("Digite a primeira nota: ")
 leia(n1)
@@ -11,8 +12,10 @@ leia(n3)
 
 res <- (n1 + n2 + n3) / 3
 se res >= 6.0 entao
-   escreval("Aprovado!")
+   status <- "Aprovado!
+   escreval(status)
 senao
-   escreval("Reprovado!")
+   status <- "Reprovado!"
+   escreval(status)
 fimse
 fimalgoritmo
